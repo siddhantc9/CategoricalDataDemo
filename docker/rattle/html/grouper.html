@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Transform a numeric vector by grouping it according to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rescale.by.group {rattle}"><tr><td>rescale.by.group {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Transform a numeric vector by grouping it according to the values of
+the supplied factor and then rescaling within the groups.
+</h2>
+
+<h3>Description</h3>
+
+<p>The numeric vector is remapped to integers from 0 to max-1, with any
+missing values mapped to the midpoint. Original idea from Tony
+Nolan. This will eventually be generalised to do the remapping using
+any of the rescaling functions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+rescale.by.group(x, by=NULL, type = "irank", itop = 100)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The numeric vector to rescale.</p>
+</td></tr>
+<tr valign="top"><td><code>by</code></td>
+<td>
+<p>A factor of the same length as x used to define the groups.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>The type of rescaling to perform.</p>
+</td></tr>
+<tr valign="top"><td><code>itop</code></td>
+<td>
+<p>For an integer remapping this is the number of groups, so
+that the numeric values are maped to the integers from 0 to (max-1).</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This Rattle support function, which is also useful by itself, provides
+a simple mechanism to rescale a numeric variable. Several rescalings
+are possible. The rescaling is done by first grouping the observations
+according to the by argument.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="rattle.html">rattle</a></code>.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

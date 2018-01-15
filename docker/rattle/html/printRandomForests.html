@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Print a representation of the Random Forest models to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for printRandomForests {rattle}"><tr><td>printRandomForests {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Print a representation of the Random Forest models to the console
+</h2>
+
+<h3>Description</h3>
+
+<p>A randomForest model, by default, consists of 500 decision trees. This
+function walks through each tree and generates a set of rules which
+are printed to the console. This takes a considerable amount of time
+and is provided for users to access the actual model, but it is not
+yet used within the Rattle GUI. It may be used to display the output
+of the RF (but it takes longer to generate than the model itself!). Or
+it might only be used on export to PMML or SQL.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+printRandomForests(model, models=NULL, include.class=NULL, format="")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>a randomForest model.</p>
+</td></tr>
+<tr valign="top"><td><code>models</code></td>
+<td>
+<p>a list of integers limiting the models in MODEL that are
+displayed.</p>
+</td></tr>
+<tr valign="top"><td><code>include.class</code></td>
+<td>
+<p>limit the output to the specific class.</p>
+</td></tr>
+<tr valign="top"><td><code>format</code></td>
+<td>
+<p>possible values are &quot;VB&quot;.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Display a ruleset for a specific model amongst the 500.
+## Not run: printRandomForests(rfmodel, 5)
+
+## Display a ruleset for specific models amongst the 500.
+## Not run: printRandomForests(rfmodel, c(5,10,15))
+
+## Display a ruleset for each of the 500 models.
+## Not run: printRandomForests(rfmodel)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

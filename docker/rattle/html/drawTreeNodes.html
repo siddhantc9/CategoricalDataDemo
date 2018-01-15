@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Draw nodes of a decision tree</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for drawTreeNodes {rattle}"><tr><td>drawTreeNodes {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Draw nodes of a decision tree
+</h2>
+
+<h3>Description</h3>
+
+<p>Draw the nodes of a decision tree
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+drawTreeNodes(tree, cex = par("cex"), pch = par("pch"),
+                           size = 4 * cex, col = NULL, nodeinfo = FALSE,
+                           units = "", cases = "obs", 
+                           digits = getOption("digits"),
+                           decimals = 2,
+                           print.levels = TRUE, new = TRUE) 
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>tree</code></td>
+<td>
+<p>an rpart decision tree.</p>
+</td></tr>
+<tr valign="top"><td><code>cex</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>pch</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>col</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>nodeinfo</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>units</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>cases</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>digits</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>decimals</code></td>
+<td>
+<p>the number of decimal digits to include in numeric
+split nodes.</p>
+</td></tr>
+<tr valign="top"><td><code>print.levels</code></td>
+<td>
+<p>.</p>
+</td></tr>
+<tr valign="top"><td><code>new</code></td>
+<td>
+<p>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>A variation of draw.tree() from the maptree package.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a>, Denis White</p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## this is usually used in the context of the plotRisk function
+## Not run: drawTreeNodes(rpart(Species ~ ., iris))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

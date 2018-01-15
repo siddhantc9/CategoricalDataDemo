@@ -1,0 +1,52 @@
+acquireAuditData        Generate the audit dataset.
+asRules                 List the rules corresponding to the rpart
+                        decision tree
+asRules.rpart           List the rules corresponding to the rpart
+                        decision tree
+audit                   Sample dataset for illustration Rattle
+                        functionality.
+binning                 Perform binning over numeric data
+calcInitialDigitDistr   Generate a frequency count of the initial
+                        digits
+calculateAUC            Determine area under a curve (e.g. a risk or
+                        recall curve) of a risk chart
+centers.hclust          List Cluster Centers for a Hierarchical Cluster
+comcat                  Echo data in a human readable form.
+drawTreeNodes           Draw nodes of a decision tree
+drawTreesAda            Draw trees from an Ada model
+errorMatrix             Model.
+evaluateRisk            Summarise the performance of a data mining
+                        model
+fancyRpartPlot          A wrapper for plotting rpart trees using prp
+genPlotTitleCmd         Generate a string to add a title to a plot
+ggVarImp                Model.
+listAdaVarsUsed         List the variables used by an adaboost model
+listTreesAda            List trees from an Ada model
+listVersions            Versions of Installed Packages
+modalvalue              Calculate the mode of a vector, array or list.
+plotOptimalLine         Plot three lines on a risk chart, one vertical
+                        and two horizontal
+plotRisk                Plot a risk chart
+printRandomForests      Print a representation of the Random Forest
+                        models to the console
+randomForest2Rules      Generate accessible data structure of a
+                        randomForest model
+rattle                  Display the Rattle User Interface
+rattle.print.summary.multinom
+                        Print information about a multinomial model
+rattleInfo              Extract Rattle and related package information.
+rescale.by.group        Transform a numeric vector by grouping it
+                        according to the values of the supplied factor
+                        and then rescaling within the groups.
+riskchart               Plot a risk chart
+savePlotToFile          Save a plot in some way
+setupDataset            Given specific contents of env add other
+                        dataset related variables.
+treeset.randomForest    Generate a representation of a tree in a Random
+                        Forest
+weather                 Sample and full dataset for illustrating Rattle
+                        functionality.
+whichNumerics           Returns a list of the names of the numeric
+                        variables in a data frame.
+wine                    The wine dataset from the UCI Machine Learning
+                        Repository.

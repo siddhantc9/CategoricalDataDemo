@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Display the Rattle User Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rattle {rattle}"><tr><td>rattle {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Display the Rattle User Interface</h2>
+
+<h3>Description</h3>
+
+<p>The Rattle user interface uses the RGtk2 package to present an
+intuitive point and click interface for data mining, extensively
+building on the excellent collection of R packages by very many
+authors for data manipulation, exploration, analysis, and evaluation.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+rattle(csvname=NULL, dataset=NULL, useGtkBuilder=NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>csvname</code></td>
+<td>
+<p>the optional name of a CSV file to load into Rattle on
+startup.</p>
+</td></tr>
+<tr valign="top"><td><code>dataset</code></td>
+<td>
+<p>The optional name as a character string of a dataset to
+load into Rattle on startup.</p>
+</td></tr>
+<tr valign="top"><td><code>useGtkBuilder</code></td>
+<td>
+<p>if not supplied then automatically determine whether to
+use the new GtkBuilder rather than the deprecated libglade. A user
+can override the heuristic choice with TRUE or FALSE.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Refer to the Rattle home page in the URL below for a growing reference
+manual for using Rattle.
+</p>
+<p>Whilst the underlying functionality of Rattle is built upon a vast
+collection of other R packages, Rattle itself provides a collection of
+utility functions used within Rattle. These are made available through
+loading the rattle package into your R library. The See Also section
+lists these utility functions that may be useful outside of Rattle.
+</p>
+<p>Rattle can initialise some options using a .Rattle file if the folder
+in which Rattle is started. The currently supported options are
+.RATTLE.DATA, .RATTLE.SCORE.IN, and .RATTLE.SCORE.OUT.
+</p>
+<p>If the environment variable RATTLE\_DATA is defined then that is set
+as the default CSV file name to load. Otherwise, if .RATTLE.DATA is
+defined then that will be used as the CSV file to load. Otherwise, if
+csvname is provided then that will be used.
+</p>
+<p>Two environments are exported by Rattle, capturing the current rattle
+state (crs) and the current rattle variables (crv).
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="evaluateRisk.html">evaluateRisk</a></code>, <code><a href="genPlotTitleCmd.html">genPlotTitleCmd</a></code>,
+<code><a href="plotRisk.html">plotRisk</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# You can start rattle with a path to a csv file to pre-specify the
+# dataset. You then need to click Execute to load the data.
+
+## Not run: rattle(system.file("csv", "weather.csv", package = "rattle"))
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

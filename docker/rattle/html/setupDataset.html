@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Given specific contents of env add other dataset related...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for setupDataset {rattle}"><tr><td>setupDataset {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Given specific contents of env add other dataset related variables.
+</h2>
+
+<h3>Description</h3>
+
+<p>This rattle support function is used for encapsulating data mining
+objects. The supplied environment is augmented with other data derived
+from the supplied data, such as a sample trianing dataset, list of
+numeric variables, and a formula for modelling.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setupDataset(env, seed=NULL)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>env</code></td>
+<td>
+<p>the environment to modify.</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>optionally set the seed for repeatability.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The supplied object (an environment) is assumed to also contain the
+variables data (a data frame), target (a character string naming the
+target variable), risk (a character string naming the risk variable),
+and inputs (a character vector naming all the input variables). This
+function then adds in the variables vars (the variables used for
+modelling), numerics (the numeric vars within inputs), nobs (the
+number of observations), form (the formula for building models), train
+(a 70% training dataset).
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

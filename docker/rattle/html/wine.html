@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The wine dataset from the UCI Machine Learning Repository.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wine {rattle}"><tr><td>wine {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The wine dataset from the UCI Machine Learning Repository.</h2>
+
+<h3>Description</h3>
+
+<p>The <code>wine</code> dataset contains the results of a chemical analysis of
+wines grown in a specific area of Italy. Three types of wine are
+represented in the 178 samples, with the results of 13 chemical
+analyses recorded for each sample.  The <code>Type</code> variable has been
+transformed into a categoric variable.
+</p>
+<p>The data contains no missing values and consits of only numeric data,
+with a three class target variable (<code>Type</code>) for classification.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>wine</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame containing 178 observations of 13 variables.
+</p>
+
+<dl>
+<dt><code>Type</code></dt><dd><p> The type of wine, into one of three classes, 1
+(59 obs), 2(71 obs), and 3 (48 obs).</p>
+</dd>
+<dt><code>Alcohol</code></dt><dd><p>Alcohol</p>
+</dd>
+<dt><code>Malic</code></dt><dd><p>Malic acid</p>
+</dd>
+<dt><code>Ash</code></dt><dd><p>Ash</p>
+</dd>
+<dt><code>Alcalinity</code></dt><dd><p>Alcalinity of ash</p>
+</dd>
+<dt><code>Magnesium</code></dt><dd><p>Magnesium</p>
+</dd>
+<dt><code>Phenols</code></dt><dd><p>Total phenols</p>
+</dd>
+<dt><code>Flavanoids</code></dt><dd><p>Flavanoids</p>
+</dd>
+<dt><code>Nonflavanoids</code></dt><dd><p>Nonflavanoid phenols</p>
+</dd>
+<dt><code>Proanthocyanins</code></dt><dd><p>Proanthocyanins</p>
+</dd>
+<dt><code>Color</code></dt><dd><p>Color intensity.</p>
+</dd>
+<dt><code>Hue</code></dt><dd><p>Hue</p>
+</dd>
+<dt><code>Dilution</code></dt><dd><p>D280/OD315 of diluted wines.</p>
+</dd>
+<dt><code>Proline</code></dt><dd><p>Proline</p>
+</dd>
+</dl>
+
+
+
+<h3>Source</h3>
+
+<p>The data was downloaded from the UCI Machine Learning Repository.
+</p>
+<p>It was read as a CSV file with no header using
+<code><a href="../../utils/html/read.table.html">read.csv</a></code>. The columns were then given the appropriate
+names using <code><a href="../../base/html/colnames.html">colnames</a></code> and the Type was transformed into a
+factor using <code><a href="../../base/html/factor.html">as.factor</a></code>. The compressed R data file was
+saved using <code><a href="../../base/html/save.html">save</a></code>:
+</p>
+<pre>
+  UCI &lt;- "http://archive.ics.uci.edu/ml"
+  REPOS &lt;- "machine-learning-databases"
+  wine.url &lt;- sprintf("
+  wine &lt;- read.csv(wine.url, header=FALSE) 
+  colnames(wine) &lt;- c('Type', 'Alcohol', 'Malic', 'Ash', 
+                      'Alcalinity', 'Magnesium', 'Phenols', 
+                      'Flavanoids', 'Nonflavanoids',
+                      'Proanthocyanins', 'Color', 'Hue', 
+                      'Dilution', 'Proline')
+  wine$Type &lt;- as.factor(wine$Type)
+  save(wine, file="wine.Rdata", compress=TRUE)
+  </pre>
+
+
+<h3>References</h3>
+
+<p>Asuncion, A. &amp; Newman, D.J. (2007). <em>UCI Machine Learning
+Repository</em>
+[<a href="http://www.ics.uci.edu/~mlearn/MLRepository.html">http://www.ics.uci.edu/~mlearn/MLRepository.html</a>]. Irvine, CA:
+University of California, School of Information and Computer Science.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

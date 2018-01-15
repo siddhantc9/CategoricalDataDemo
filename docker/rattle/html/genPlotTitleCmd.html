@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate a string to add a title to a plot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for genPlotTitleCmd {rattle}"><tr><td>genPlotTitleCmd {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Generate a string to add a title to a plot
+</h2>
+
+<h3>Description</h3>
+
+<p>Generate a string that is intended to be <code><a href="../../base/html/eval.html">eval</a></code>'d that
+will add a title and sub-title to a plot. The string is a call to
+<code><a href="../../graphics/html/title.html">title</a></code>, supplying the given arguments,
+<code><a href="../../base/html/paste.html">paste</a></code>d together, as the main title, and generating a
+sub-title that begins with &lsquo;Rattle&rsquo; and continues with the current date
+and time, and finishes with the current user's username. This is used
+internally in Rattle to adorn a plot with relevant information, but
+may be useful outside of Rattle.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+genPlotTitleCmd(..., vector=FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>one or more strings that will be pasted together to form
+the main title.</p>
+</td></tr>
+<tr valign="top"><td><code>vector</code></td>
+<td>
+<p>whether to return a vector as the result.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../base/html/eval.html">eval</a></code>, <code><a href="../../graphics/html/title.html">title</a></code>, <code><a href="plotRisk.html">plotRisk</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# generate some random plot
+plot(rnorm(100))
+
+# generate the string representing the command to add titles
+tl &lt;- genPlotTitleCmd("Sample Plot of", "No Particular Importance")
+
+# cause the string to be executed as an R command
+eval(parse(text=tl))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Summarise the performance of a data mining model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for evaluateRisk {rattle}"><tr><td>evaluateRisk {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Summarise the performance of a data mining model
+</h2>
+
+<h3>Description</h3>
+
+<p>By taking predicted values, actual values, and measures of the risk
+associated with each case, generate a summary that groups the distinct
+predicted values, calculating the accumulative percentage Caseload,
+Recall, Risk, Precision, and Measure.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+evaluateRisk(predicted, actual, risks)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>predicted</code></td>
+<td>
+<p>a numeric vector of probabilities (between 0 and 1)
+representing the probability of each entity being a 1.</p>
+</td></tr>
+<tr valign="top"><td><code>actual</code></td>
+<td>
+<p>a numeric vector of classes (0 or 1).</p>
+</td></tr>
+<tr valign="top"><td><code>risks</code></td>
+<td>
+<p>a numeric vector of risk (e.g., dollar amounts)
+associated with each entity that has a acutal of 1.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="plotRisk.html">plotRisk</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+## simulate the data that is typical in data mining
+
+## we often have only a small number of positive known case
+cases &lt;- 1000
+actual &lt;- as.integer(rnorm(cases) &gt; 1)
+adjusted &lt;- sum(actual)
+nfa &lt;- cases - adjusted
+
+## risks might be dollar values associated adjusted cases
+risks &lt;- rep(0, cases)
+risks[actual==1] &lt;- round(abs(rnorm(adjusted, 10000, 5000)), 2)
+
+## our models will generated a probability of a case being a 1
+predicted &lt;- rep(0.1, cases) 
+predicted[actual==1] &lt;- predicted[actual==1] + rnorm(adjusted, 0.3, 0.1)
+predicted[actual==0] &lt;- predicted[actual==0] + rnorm(nfa, 0.1, 0.08)
+predicted &lt;- signif(predicted)
+
+## call upon evaluateRisk to generate performance summary
+ev &lt;- evaluateRisk(predicted, actual, risks)
+
+## have a look at the first few and last few
+head(ev)
+tail(ev)
+
+## the performance is usually presented as a Risk Chart
+## under the CRAN MS/Windows this causes a problem, so don't run for now
+## Not run: plotRisk(ev$Caseload, ev$Precision, ev$Recall, ev$Risk)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

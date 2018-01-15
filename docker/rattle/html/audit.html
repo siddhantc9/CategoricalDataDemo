@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sample dataset for illustration Rattle functionality.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for audit {rattle}"><tr><td>audit {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sample dataset for illustration Rattle functionality.</h2>
+
+<h3>Description</h3>
+
+<p>The audit dataset is an artificially constructed dataset that has some
+of the characteristics of a true financial audit dataset for modelling
+productive and non-productive audits of a person's financial
+statement. A productive audit is one which identifies errors or
+inaccuracies in the information provided by a client. A non-productive
+audit is usually an audit which found all supplied information to be
+in order.
+</p>
+<p>The audit dataset is used to illustrate binary classification.  The
+target variable is identified as <code>TARGET\_Adjusted</code>.
+</p>
+<p>The dataset is quite small, consisting of just 2000 entities. Its
+primary purpose is to illustrate modelling in Rattle, so a minimally
+sized dataset is suitable.
+</p>
+<p>The dataset itself is derived from publicly available data (which has
+nothing to do with audits). See <a href="acquireAuditData.html">acquireAuditData</a> for details.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame. In line with data mining terminology we refer to the
+rows of the data frame (or the observations) as entities. The columns
+are refered to as variables.  The entities represent people in this
+case. We describe the variables here:
+</p>
+
+<dl>
+<dt><code>ID</code></dt><dd><p>This is a unique identifier for each person.</p>
+</dd>
+<dt><code>Age</code></dt><dd><p>The age.</p>
+</dd>
+<dt><code>Employment</code></dt><dd><p>The type of employment.</p>
+</dd>
+<dt><code>Education</code></dt><dd><p>The highest level of education.</p>
+</dd>
+<dt><code>Marital</code></dt><dd><p>Current marital status.</p>
+</dd>
+<dt><code>Occupation</code></dt><dd><p>The type of occupation.</p>
+</dd>
+<dt><code>Income</code></dt><dd><p>The amount of income declared.</p>
+</dd>
+<dt><code>Gender</code></dt><dd><p>The persons gender.</p>
+</dd>
+<dt><code>Deductions</code></dt><dd><p>Total amount of expenses that a person
+claims in their financial statement.</p>
+</dd>
+<dt><code>Hours</code></dt><dd><p>The average hours worked on a weekly basis.</p>
+</dd>
+<dt><code>IGNORE_Accounts</code></dt><dd><p>The main country in which the person
+has most of their money banked. Note that the variable name is
+prefixed with IGNORE. This is recognised by Rattle as the default
+role for this variable.</p>
+</dd>
+<dt><code>RISK_Adjustment</code></dt><dd><p>This variable records the monetary
+amount of any adjustment to the person's financial claims as a
+result of a productive audit. This variable, which should not be
+treated as an input variable, is thus a measure of the size of the
+risk associated with the person.</p>
+</dd>
+<dt><code>TARGET_Adjusted</code></dt><dd><p>The target variable for modelling
+(generally for classification modelling). This is a numeric field
+of class integer, but limited to 0 and 1, indicating
+non-productive and productive audits, respectively. Productive
+audits are those that result in an adjustment being made to a
+client's financial statement.</p>
+</dd>
+</dl>
+
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

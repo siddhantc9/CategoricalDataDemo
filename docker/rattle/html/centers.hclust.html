@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: List Cluster Centers for a Hierarchical Cluster</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for centers.hclust {rattle}"><tr><td>centers.hclust {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+List Cluster Centers for a Hierarchical Cluster
+</h2>
+
+<h3>Description</h3>
+
+<p>Generate a matrix of centers from a hierarchical cluster.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+centers.hclust(x, h, nclust=10, use.median=FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The data used to build the cluster.</p>
+</td></tr>
+<tr valign="top"><td><code>h</code></td>
+<td>
+<p>A hclust object.</p>
+</td></tr>
+<tr valign="top"><td><code>nclust</code></td>
+<td>
+<p>Number of clusters.</p>
+</td></tr>
+<tr valign="top"><td><code>use.median</code></td>
+<td>
+<p>Use meadion instead of mean.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>For the specified number of clusters, cut the hierarchical cluster
+appropriately to that number of clusters, and return the mean (or
+median) of each resulting cluster.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Daniele Medri and <a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

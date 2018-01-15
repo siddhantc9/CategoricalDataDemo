@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot three lines on a risk chart, one vertical and two...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotOptimalLine {rattle}"><tr><td>plotOptimalLine {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Plot three lines on a risk chart, one vertical and two horizontal
+</h2>
+
+<h3>Description</h3>
+
+<p>Plots a a vertical line at x up to max of y1 and y2, then horizontal
+from this line at y1 and y2. Intended for plotting on a plotRisk.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotOptimalLine(x, y1, y2, pr = NULL, colour = "plum", label = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>location of vertical line.</p>
+</td></tr>
+<tr valign="top"><td><code>y1</code></td>
+<td>
+<p>location of one horizontal line.</p>
+</td></tr>
+<tr valign="top"><td><code>y2</code></td>
+<td>
+<p>location of other horizontal line.</p>
+</td></tr>
+<tr valign="top"><td><code>pr</code></td>
+<td>
+<p>Aprint a percentage at this point.</p>
+</td></tr>
+<tr valign="top"><td><code>colour</code></td>
+<td>
+<p>of the line.</p>
+</td></tr>
+<tr valign="top"><td><code>label</code></td>
+<td>
+<p>at bottom of line.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Intended to plot an optimal line on a Risk Chart as plotted by
+plotRisk.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="plotRisk.html">plotRisk</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## this is usually used in the context of the plotRisk function
+## Not run: ev &lt;- evaluateRisk(predicted, actual, risk)
+
+## imitate this output here
+ev &lt;- NULL
+ev$Caseload  &lt;- c(1.0, 0.8, 0.6, 0.4, 0.2, 0)
+ev$Precision &lt;- c(0.15, 0.18, 0.21, 0.25, 0.28, 0.30)
+ev$Recall    &lt;- c(1.0, 0.95, 0.80, 0.75, 0.5, 0.0)
+ev$Risk      &lt;- c(1.0, 0.98, 0.90, 0.77, 0.30, 0.0)
+
+## plot the Risk Chart
+plotRisk(ev$Caseload, ev$Precision, ev$Recall, ev$Risk,
+         chosen=60, chosen.label="Pr=0.45")
+
+## plot the optimal point
+plotOptimalLine(40, 77, 75, colour="maroon")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>

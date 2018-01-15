@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A wrapper for plotting rpart trees using prp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fancyRpartPlot {rattle}"><tr><td>fancyRpartPlot {rattle}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+A wrapper for plotting rpart trees using prp
+</h2>
+
+<h3>Description</h3>
+
+<p>Plots a fancy RPart decision tree using the pretty rpart plotter.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+fancyRpartPlot(model, main="", sub, palettes, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>an rpart object.</p>
+</td></tr>
+<tr valign="top"><td><code>main</code></td>
+<td>
+<p>title for the plot.</p>
+</td></tr>
+<tr valign="top"><td><code>sub</code></td>
+<td>
+<p>sub title for the plot. The default is a Rattle string with
+date, time and username.</p>
+</td></tr>
+<tr valign="top"><td><code>palettes</code></td>
+<td>
+<p>a list of sequential palettes names. As supported by
+RColorBrewer::brewer.pal the available names are Blues BuGn BuPu GnBu
+Greens Greys Oranges OrRd PuBu PuBuGn PuRd Purples RdPu Reds YlGn
+YlGnBu YlOrBr YlOrRd.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>the type of plot to generate (2).</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed on to prp.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p><a href="mailto:Graham.Williams@togaware.com">Graham.Williams@togaware.com</a></p>
+
+
+<h3>References</h3>
+
+<p>Package home page: <a href="http://rattle.togaware.com">http://rattle.togaware.com</a></p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Use rpart to build a decision tree.
+
+library(rpart)
+
+## Set up the data for modelling.
+
+set.seed(42)
+ds     &lt;- weather
+target &lt;- "RainTomorrow"
+risk   &lt;- "RISK_MM"
+ignore &lt;- c("Date", "Location", risk)
+vars   &lt;- setdiff(names(ds), ignore)
+nobs   &lt;- nrow(ds)
+form   &lt;- formula(paste(target, "~ ."))
+train  &lt;- sample(nobs, 0.7*nobs)
+test   &lt;- setdiff(seq_len(nobs), train)
+actual &lt;- ds[test, target]
+risks  &lt;- ds[test, risk]
+
+# Build the model.
+
+model &lt;- rpart(form, data=ds[train, vars])
+
+## Plot the model.
+
+fancyRpartPlot(model)
+
+## Choose different colours
+
+fancyRpartPlot(model, palettes=c("Greys", "Oranges"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>rattle</em> version 5.0.14 <a href="00Index.html">Index</a>]</div>
+</body></html>
