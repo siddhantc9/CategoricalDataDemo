@@ -1,7 +1,7 @@
 FROM centos:latest
 
 
-MAINTAINER "priyanka pandit" priyanka.pandit@atos.net
+MAINTAINER "siddhant chauhan" chauhan.siddhant698@gmail.com
 
 ## Add EPEL repo
 RUN yum -y install epel-release
@@ -56,7 +56,7 @@ RUN chown shiny:shiny /var/log/shiny-server \
  
 WORKDIR /srv/shiny-server
 
-RUN git clone https://github.com/priyanka5693/RAtos.git
+RUN git clone https://github.com/siddhantc9/CategoricalDataDemo.git
 
 RUN ls /srv/shiny-server
 
@@ -65,7 +65,7 @@ RUN cp -R /usr/lib64/R/library/shiny/examples/* /srv/shiny-server/
 # Copy shiny-server launcher file
 RUN pwd
 
-WORKDIR /srv/shiny-server/RAtos/Atos_Innovatos/docker/
+WORKDIR /srv/shiny-server/CategoricalDataDemo/docker/
 
 RUN ls
 
@@ -79,7 +79,6 @@ RUN chmod +x /usr/bin/shiny-server.sh
 RUN chmod +x /usr/lib64/R/library/rattle
 
 # Clone git repo into shiny server target directory
-#RUN git clone https://bitbucket.fsc.atos-services.net/projects/CFL/repos/codex-shared-fab-lab-repo/browse/Industries/Manufacturing/Atos_Innovatos_Generic_2017
 EXPOSE 3838
 
 # Execute Shiny server
